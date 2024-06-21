@@ -1,0 +1,22 @@
+<?php
+
+// app/Models/Service.php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Services extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'title', 'description', 'price','photo'
+    ];
+
+    public function bokings()
+    {
+        return $this->hasMany(Boking::class);
+    }
+}
