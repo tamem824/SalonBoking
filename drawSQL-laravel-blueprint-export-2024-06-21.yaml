@@ -1,0 +1,30 @@
+models:
+    Service:
+        id: false
+        Service_id: bigIncrements
+        title: bigInteger foreign:about_us.title
+        description: bigInteger
+        photo: bigInteger
+        price: bigInteger
+    User:
+        id: false
+        user_id: bigIncrements
+        full_name: bigInteger
+        emaail: bigInteger
+    GeneralSiting:
+        id: false
+        site_availability: bigIncrements foreign:booking.date
+        type: bigInteger
+    AboutU:
+        id: false
+        title: bigIncrements
+        description: bigInteger
+        content: bigInteger
+        photo: bigInteger
+    Booking:
+        id: false
+        Booking_id: bigIncrements foreign:User.user_id
+        Service_id: bigInteger foreign:Service.Service_id
+        user_id: bigInteger
+        date: bigInteger
+        boked_at: bigInteger
